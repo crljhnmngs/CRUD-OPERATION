@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MySql.EntityFrameworkCore.Extensions;
@@ -39,6 +40,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors(options =>
+options.WithOrigins("http://localhost:3000")
+.AllowAnyMethod()
+.AllowAnyHeader());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
