@@ -1,7 +1,7 @@
 # CRUD-OPERATION
 
 [![My Skills](https://skills.thijs.gg/icons?i=react,ts,.netcore)](https://skills.thijs.gg)
-![alt text](https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png)
+![](https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png | with:100)
 
 ReactJs/TypeScript <br />
 ASP.NET Core Web API
