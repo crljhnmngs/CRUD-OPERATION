@@ -8,5 +8,5 @@
 <br />
 
 <h2> ReactJs/TypeScript  </h2>
-<br />
-ASP.NET Core Web API
+<h2> ASP.NET Core Web API  </h2>
+
