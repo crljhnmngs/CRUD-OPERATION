@@ -1,2 +1,3 @@
 # CRUD-OPERATION
-ReactJs / ASP.NET Core Web API
+ReactJs/TypeScript
+ASP.NET Core Web API
