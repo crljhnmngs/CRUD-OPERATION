@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WebAPI.Controllers.EmployeeController.GetEmployee">
+            <summary>
+            Get all the employee
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EmployeeController.GetEmployeeById(System.Int32)">
+            <summary>
+            Get employee by ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EmployeeController.AddEmployee(WebAPI.Models.Employee)">
+            <summary>
+            Create new Employee
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EmployeeController.UpdateEmployee(System.Int32,WebAPI.Models.Employee)">
+            <summary>
+            Update Employee data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EmployeeController.DeleteEmployee(System.Int32)">
+            <summary>
+            Delete Employee
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using MySql.EntityFrameworkCore.Extensions;
+using System.Reflection;
 using System.Reflection.Metadata;
 using WebAPI.Data;
 
@@ -12,6 +14,21 @@ builder.Services.AddEntityFrameworkMySQL().AddDbContext<EmployeeContext>(options
 });
 
 
+//For Swagger
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Employee API",
+        Description = "An ASP.NET Core Web API for managing Employee",
+    });
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+});
+
 
 // Add services to the container.
 
@@ -22,13 +39,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 
 
 app.UseHttpsRedirection();

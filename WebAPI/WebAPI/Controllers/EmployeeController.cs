@@ -8,8 +8,8 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
-    [Tags("Employee API")]
-    [Route("api/[controller]/[action]")]
+    [Tags("Employee APIs")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
@@ -21,18 +21,31 @@ namespace WebAPI.Controllers
             _employeeContext = context;
         }
 
+        /// <summary>
+        /// Get all the employee
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IEnumerable<Employee>> GetEmployee()
         {
             return await _employeeContext.Employees.ToListAsync();
         }
 
+        /// <summary>
+        /// Get employee by ID
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployeeById(int id)
         {
             var employee = await _employeeContext.Employees.FindAsync(id);
             return employee == null ? NotFound() : Ok(employee);
         }
+
+        /// <summary>
+        /// Create new Employee
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> AddEmployee(Employee employee)
         {
@@ -41,6 +54,11 @@ namespace WebAPI.Controllers
 
             return CreatedAtAction(nameof(GetEmployeeById), new {id = employee.EmployeeId}, employee);
         }
+
+        /// <summary>
+        /// Update Employee data
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEmployee(int id, Employee employee)
         {
@@ -51,6 +69,11 @@ namespace WebAPI.Controllers
 
             return NoContent();
         }
+
+        /// <summary>
+        /// Delete Employee
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
