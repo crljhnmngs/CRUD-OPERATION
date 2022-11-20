@@ -7,6 +7,6 @@
 </div>
 <br />
 
-
-ReactJs/TypeScript <br />
+<h2> ReactJs/TypeScript  </h2>
+<br />
 ASP.NET Core Web API
