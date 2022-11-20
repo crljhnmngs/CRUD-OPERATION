@@ -1,6 +1,6 @@
 # CRUD-OPERATION
 
-[![My Skills](https://skills.thijs.gg/icons?i=react,ts,asp)](https://skills.thijs.gg)
+[![Technologies](https://github.com/crljhnmngs/CRUD-OPERATION/edit/main/README.md/icons?i=react,ts,asp)](https://github.com/crljhnmngs/CRUD-OPERATION/edit/main/README.md)
 
 ReactJs/TypeScript <br />
 ASP.NET Core Web API
