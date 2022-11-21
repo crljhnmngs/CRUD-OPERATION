@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './components/Header';
-import { EmployeeTable } from './components/Table';
+import Header from './components/header';
+import Tables  from './components/tables'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,10 +10,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <React.Fragment>
 
     <Header></Header>
-    <EmployeeTable></EmployeeTable>
-
+    <Tables></Tables>
+    
+    </React.Fragment>
   </React.StrictMode>
 );
 

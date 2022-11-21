@@ -4,12 +4,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-
-
-
-
 export default function Header() {
   return (
+    <React.Fragment>
     <Box sx={{ flexGrow: 1, '& .MuiToolbar-root':{
         bgcolor: '#FF0000'
     } }}>
@@ -21,5 +18,6 @@ export default function Header() {
         </Toolbar>
       </AppBar>
     </Box>
+    </React.Fragment>
   );
 }
