@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/header';
-import Tables  from './components/tables'
+import EmployeeList  from './components/employeeList'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,14 +9,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  
     <React.Fragment>
-
-    <Header></Header>
-    <Tables></Tables>
-    
+      <Header></Header>
+      <EmployeeList></EmployeeList>
     </React.Fragment>
-  </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

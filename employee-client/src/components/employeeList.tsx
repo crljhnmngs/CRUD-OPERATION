@@ -1,22 +1,20 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { TableContainer, Paper, Table, TableRow, Box, TableHead, Button, TableCell, TableBody, Typography} from '@mui/material';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { createApiEndpoint, ENDPOITS } from '../api';
+import useEmployee from '../hooks/useEmployee';
+import { EmployeeRowMemo } from './employeeRow';
 
+interface Employees {
+    employeeId: number,
+    firstname: string,
+    lastname: string,
+    age: number,
+    gender: string,
+    department: string,
+}
 
-export default function Tables() {
+export default function EmployeeList() {
 
-    const[employee, setEmployee] = useState<any[]>([])
-    
-    useEffect(() => {
-        createApiEndpoint(ENDPOITS.employee)
-        .fetch()
-        .then(res =>{
-            setEmployee(res.data)
-        })
-        .catch(err=>{console.log(err)})
-    },[])
+    const {employees} = useEmployee();
 
     return (
         <React.Fragment>
@@ -45,15 +43,8 @@ export default function Tables() {
     </TableHead>
     
     <TableBody>
-    {employee.map(emp => 
-        <TableRow key={emp.employeeId}>
-            <TableCell align="center" sx={{color: 'white'}}>{emp.firstname}</TableCell>
-            <TableCell align="center" sx={{color: 'white'}}>{emp.lastname}</TableCell>
-            <TableCell align="center" sx={{color: 'white'}}>{emp.age}</TableCell>
-            <TableCell align="center" sx={{color: 'white'}}>{emp.gender}</TableCell>
-            <TableCell align="center" sx={{color: 'white'}}>{emp.department}</TableCell>
-            <TableCell align="center" sx={{color: 'white'}}> <ModeEditIcon></ModeEditIcon>  <DeleteIcon></DeleteIcon> </TableCell>
-        </TableRow>
+    {employees.map(emp => 
+        <EmployeeRowMemo key={emp.employeeId} props={emp} />
         )}
     </TableBody>
     </Table>
